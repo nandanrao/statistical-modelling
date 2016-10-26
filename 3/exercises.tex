@@ -1,0 +1,378 @@
+\documentclass[a4paper,12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{mathtools,amsfonts,amssymb, cmbright, bm, commath, multicol}
+\DeclareMathOperator*{\argmin}{argmin}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\normalsize 14D001 || Exercises 1 || Nandan Rao || 26/10/2016
+
+\section{Slides 1, Exercise 4}
+
+\subsection{ Coefficients with Standard Errors }
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/coefficients-1} 
+
+\end{knitrout}
+
+
+\subsection{ Standardized Residuals vs. Fitted  }
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/high_leverage-1} 
+
+\end{knitrout}
+
+As we can see, there are no points with leverage over $3 * 31/300$.
+
+\subsection{ QQ Standardized Residuals vs. Standard Gaussian }
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/QQ_plot-1} 
+
+\end{knitrout}
+
+\section{Slides 2, Exercise 2}
+
+\subsection{ Plot the raw data }
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/plot_raw-1} 
+
+\end{knitrout}
+
+\subsection{ Functions phix and postparams }
+
+See Appendix A.2.2
+
+\subsection{ Plot Poly and Gauss Kernels }
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/plot_curve_fitting-1} 
+
+\end{knitrout}
+
+
+\section{Slides 3, Exercise 2.3}
+
+We start with our base formula for finding the expectation of a given independent variable, $\hat{t}_n$. We will find that we can plug in our formula for the function $\kappa$ by moving out matrix form and representing the equation as a sum:
+
+\begin{align*}
+\hat{t}_n &= \phi(\bm{x}_n)^T W_{bayes} \\
+\hat{t}_n &= \phi(\bm{x}_n)^T(\lambda I + \Phi^T\Phi)^{-1}\Phi^Tt \\
+\hat{t}_n &= \sum_{k=1}^{N}\phi(\bm{x}_n)^T(\lambda I + \Phi^T\Phi)^{-1}\phi(\bm{x}_k)^Tt_k \\
+\hat{t}_n &= \sum_{k=1}^{N} \kappa (\bm{x}_n, \bm{x}_k)t_k \\
+\hat{t}_n &= K_n^Tt \\
+\hat{t} &= Kt
+\end{align*}
+
+Setting $\lambda = 0$, K becomes the Hat matrix we know and love:
+
+\begin{align*}
+\hat{t} &= \Phi(\lambda I + \Phi^T\Phi)^{-1}\Phi^Tt \\
+\hat{t} &= \Phi(0 + \Phi^T\Phi)^{-1}\Phi^Tt \\
+\hat{t} &= \Phi(\Phi^T\Phi)^{-1}\Phi^Tt \\
+\hat{t} &= Ht
+\end{align*}
+
+
+\section{Slides 4, Exercise 2.1}
+
+Given a function consisting of scalars $\mu$ and a:
+$$
+f(\mu) = (\mu - a)^2 + \lambda |\mu|
+$$
+
+We can take the derivative (assuming $\mu$ positive, so $|\mu|$ is equal to $\mu$) and set that equal to 0 in order to derive $\mu$ that minimizes $f(\mu)$:
+
+\begin{align*}
+f(\mu^+) &= \mu^2 - 2a\mu + a^2 + \lambda\mu \\
+f'(\mu^+) &= 2\mu - 2a + \lambda \\
+0 &= 2\mu - 2a + \lambda \\
+\mu &= a - \frac{\lambda}{2}
+\end{align*}
+
+We can now try and do the same for negative $\mu$:
+
+\begin{align*}
+f(\mu^-) &= \mu^2 - 2a\mu + a^2 - \lambda\mu \\
+f'(\mu^-) &= 2\mu - 2a - \lambda \\
+\mu &= a + \frac{\lambda}{2}
+\end{align*}
+
+However, if $\mu$ is negative, $a > 0$, and $\lambda > 0$, then this equation is a contradiction. The minimum for $\mu$ cannot, therefore exist in the negative part of $\mu$ as long as both a and $\lambda$ are positive. This leads us to the following equation to describe $\mu$ at all places under these conditions:
+
+$$
+\mu = (a - \frac{\lambda}{2})^+
+$$
+
+\section{Slides 4, Exercise 2.2}
+We start by finding the posterior loglikelihood function as the addition of the distribution loglikelihood function (Normal) and the prior (Laplace).
+
+The multivariate normal distribution with no covariance and identical variance is given by: 
+
+$$
+((2\pi)^n*nq^{-1})^{-1/2}exp\bigg\{ \frac{-q}{2}(\bm{w} - t_n)^{T}(\bm{w} - t_n) \bigg\}
+$$
+
+Taking the logarithm and dropping the constants that do not have $\bm{w}$, which is what we will be  minimizing in our negative loglikelihood, we arrive at the following familiar Least Squares form:
+
+$$
+\argmin_{\bm{w}} \sum_n \frac{q}{2}(\bm{w} - t_n)^{T}(\bm{w} - t_n)
+$$
+
+We provide a similar treatment to the Laplace prior with mean 0, the distribution given by: 
+
+$$
+\frac{\delta}{2} exp \bigg\{ -\frac{\delta}{2} \sum_i |\bm{w}_i| \bigg\}
+$$
+
+Which will reduce to the negative loglikelihood function:
+
+$$
+\argmin_{\bm{w}} \frac{\delta}{2} \sum_i |\bm{w}_i|
+$$
+
+The sum of absolute values can be further be written in matrix form as the L1 norm: 
+
+$$
+\argmin_{\bm{w}} \frac{\delta}{2} \norm{ \bm{w} }_1
+$$
+
+This creates the following posterior negative loglikelihood function by combining the two:
+
+$$
+\argmin_{\bm{w}} \sum_n \frac{q}{2}(\bm{w} - t_n)^{T}(\bm{w} - t_n) + \frac{\delta}{2} \norm{ \bm{w} }_1
+$$
+
+This is consistent with L1 regularization, and consistent with the goal of finding a prior that will allow for sparsity in our weight. To find the minimum analytically we can take the derivative with respect to $\bm{w}$ and set that equal to zero. The derivative of the L1 norm, however, cannot be derived at any zero value. We will address this shortcoming later.
+
+\begin{align*}
+0 &= \nabla \bigg(  \sum_n \frac{q}{2}(\bm{w}^T\bm{w} - 2t_n^T\bm{w} - t_n^Tt_n) + \frac{\delta}{2} \norm{ \bm{w} }_1  \bigg) \\
+0 &=  \sum_n (q\bm{w} - qt_n) + \frac{\delta}{2} \bigg( \frac{\bm{w} \circ |\bm{w}|^{-1}}{ \norm{ \bm{w}}_1^{0} }  \bigg) \\ 
+0 &=  q \sum_n (\bm{w} - t_n) + \frac{\delta}{2} ( \bm{w} \circ |\bm{w}|^{-1} ) \\
+0 &=  qn\bm{w} - q\sum_n t_n + \bigg(\frac{\delta}{2} ( \bm{w} \circ |\bm{w}|^{-1} ) \bigg) \\
+\bm{w} &=  \frac{1}{n} \sum_n t_n - \bigg( \frac{\delta}{2qn} ( \bm{w} \circ |\bm{w}|^{-1} ) \bigg) \\
+  \bm{w} &=  \bar{t} - \frac{\delta}{2qn} ( \bm{w} \circ |\bm{w}|^{-1} )
+\end{align*}
+
+Where $\circ$ is defined as the element-wise product. We can see this is unsolvable for all elements of $\bar{t}$ where $\bar{t_n} \leq \frac{\delta}{2qn}$ and $\bar{t_n} \geq \frac{\delta}{2qn}$. Outside that range, this shrinks the absolute value of every element in $\bar{t}$ by $\frac{\delta}{2qn}$ to find the optimum w. We need to isolate w in order to find a closed-form $\bm{w}_{MAP}$ which will require us to restrict our formula to the positive part of w and the negative part of w separately, similar to 2.1, where we did this for positive a. This takes care of the unsolvable section in the middle. We will first define a function $ g(x) $ that takes a scalar, x:
+
+$$
+g(x) = 
+\begin{cases}
+  (x - \frac{\delta}{2qn})^+ , x > 0 \\
+  (x + \frac{\delta}{2qn})^- , x < 0 \\
+  0, x = 0
+\end{cases}
+$$
+
+We will then define $h(\bm{x})$ as a function that simply applies g(x) element-wise to a vector $\bm{x}$. We now have a very intuitive definition of $\bm{w}_{MAP}$, which simply shrinks every element of $\bar{t}$ towards our prior mean of 0, by a constant defined as the ratio between the strength of our prior and the size of our sample variance as well as the size of our sample.
+
+$$
+  \bm{w}_{MAP} =  h(\bar{t})
+$$
+
+
+
+\appendix
+\section{Source code}
+
+\subsection{Slides 1}
+
+\subsubsection{4.1}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(stats4)}
+\hlkwd{library}\hlstd{(ggplot2)}
+\hlkwd{library}\hlstd{(dplyr)}
+
+\hlstd{dat.raw} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"synthetic_regression.txt"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{" "}\hlstd{,} \hlkwc{nrows}\hlstd{=}\hlnum{300}\hlstd{)}
+\hlstd{dat.trim} \hlkwb{<-} \hlstd{dat.raw[,} \hlnum{0}\hlopt{:}\hlnum{31}\hlstd{]}
+\hlstd{dat.model} \hlkwb{<-} \hlkwd{lm}\hlstd{(t} \hlopt{~} \hlstd{., dat.trim)}
+
+\hlcom{# Plot parameter estimates and confidence intervals}
+\hlstd{se} \hlkwb{<-} \hlkwd{coef}\hlstd{(}\hlkwd{summary}\hlstd{(dat.model))[,} \hlnum{2}\hlstd{]}
+\hlstd{ce} \hlkwb{<-} \hlstd{dat.model}\hlopt{$}\hlstd{coefficients}
+\hlstd{dat.estimates} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwd{cbind}\hlstd{(ce, ce} \hlopt{-} \hlnum{1.96} \hlopt{*} \hlstd{se, ce} \hlopt{+} \hlnum{1.96} \hlopt{*} \hlstd{se))}
+\hlkwd{colnames}\hlstd{(dat.estimates)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"mean"}\hlstd{,} \hlstr{"lower.bound"}\hlstd{,} \hlstr{"upper.bound"}\hlstd{)}
+\hlstd{dat.estimates}\hlopt{$}\hlstd{coefficient} \hlkwb{=} \hlnum{0}\hlopt{:}\hlstd{(}\hlkwd{dim}\hlstd{(dat.estimates)[}\hlnum{1}\hlstd{]} \hlopt{-} \hlnum{1}\hlstd{)}
+\hlstd{dat.estimates} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= coefficient,} \hlkwc{y} \hlstd{= mean))} \hlopt{+}
+    \hlkwd{geom_point}\hlstd{()} \hlopt{+}
+    \hlkwd{geom_pointrange}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin} \hlstd{= lower.bound,} \hlkwc{ymax} \hlstd{= upper.bound))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\subsubsection{4.2}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{dat.scaled.residuals} \hlkwb{<-} \hlkwd{scale}\hlstd{(}\hlkwd{residuals}\hlstd{(dat.model))}
+\hlstd{dat.hats} \hlkwb{<-} \hlkwd{influence}\hlstd{(dat.model)}\hlopt{$}\hlstd{hat}
+\hlstd{threshold} \hlkwb{<-} \hlnum{3}\hlopt{*}\hlnum{31}\hlopt{/}\hlnum{300}
+
+\hlkwd{data.frame}\hlstd{(}\hlkwc{fitted} \hlstd{= dat.model}\hlopt{$}\hlstd{fitted,} \hlkwc{scaled.residuals} \hlstd{= dat.scaled.residuals)} \hlopt{%>%}
+    \hlkwd{mutate}\hlstd{(}\hlkwc{leverage} \hlstd{= dat.hats,} \hlkwc{high.leverage} \hlstd{= leverage} \hlopt{>} \hlstd{threshold )} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(fitted, scaled.residuals))} \hlopt{+}
+    \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= high.leverage))} \hlopt{+}
+    \hlkwd{scale_colour_manual}\hlstd{(}\hlkwc{values}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"black"}\hlstd{,} \hlstr{"red"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\subsubsection{4.3}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data.frame}\hlstd{(}\hlkwc{residuals} \hlstd{= dat.scaled.residuals)} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{sample} \hlstd{= residuals))} \hlopt{+}
+    \hlkwd{stat_qq}\hlstd{(}\hlkwc{distribution} \hlstd{= qnorm)} \hlopt{+}
+    \hlkwd{geom_abline}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"#33FF00"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\subsection{Slides 2}
+
+\subsubsection{2.1}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{dat.raw} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"curve_data.txt"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{" "}\hlstd{)}
+\hlstd{dat.raw} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(x, t))} \hlopt{+}
+    \hlkwd{geom_point}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\subsubsection{2.2 - 2.4}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(ggplot2)}
+\hlkwd{library}\hlstd{(dplyr)}
+
+\hlstd{poly} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{M}\hlstd{) \{}
+    \hlkwd{sapply}\hlstd{(}\hlnum{0}\hlopt{:}\hlstd{M,} \hlkwa{function} \hlstd{(}\hlkwc{n}\hlstd{) x}\hlopt{**}\hlstd{n)}
+\hlstd{\}}
+
+\hlstd{g.mus} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{M}\hlstd{) \{}
+    \hlkwd{sapply}\hlstd{(}\hlnum{0}\hlopt{:}\hlstd{(M}\hlopt{-}\hlnum{1}\hlstd{),} \hlkwa{function} \hlstd{(}\hlkwc{n}\hlstd{) n}\hlopt{/}\hlstd{(M}\hlopt{-}\hlnum{1}\hlstd{))}
+\hlstd{\}}
+
+\hlstd{g.exp} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{mu}\hlstd{) \{}
+    \hlkwd{exp}\hlstd{(}\hlopt{-}\hlstd{(x}\hlopt{-}\hlstd{mu)}\hlopt{**}\hlnum{2}\hlopt{/}\hlnum{.2}\hlstd{)}
+\hlstd{\}}
+
+\hlstd{gauss} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{M}\hlstd{) \{}
+    \hlstd{terms} \hlkwb{<-} \hlkwd{sapply}\hlstd{(}\hlkwd{g.mus}\hlstd{(M),} \hlkwa{function} \hlstd{(}\hlkwc{mu}\hlstd{)} \hlkwd{g.exp}\hlstd{(x, mu))}
+    \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{, terms)}
+\hlstd{\}}
+
+\hlstd{phix} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{M}\hlstd{,} \hlkwc{type}\hlstd{) \{}
+    \hlkwa{if} \hlstd{(type} \hlopt{==} \hlstr{"poly"}\hlstd{)} \hlkwd{return}\hlstd{(}\hlkwd{poly}\hlstd{(x, M))}
+    \hlkwa{if} \hlstd{(type} \hlopt{==} \hlstr{"gauss"}\hlstd{)} \hlkwd{return}\hlstd{(}\hlkwd{gauss}\hlstd{(x, M))}
+\hlstd{\}}
+
+\hlstd{makephi} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{X}\hlstd{,} \hlkwc{fn}\hlstd{,} \hlkwc{M}\hlstd{,} \hlkwc{type}\hlstd{) \{}
+    \hlkwd{t}\hlstd{(}\hlkwd{sapply}\hlstd{(X,} \hlkwa{function} \hlstd{(}\hlkwc{p}\hlstd{)} \hlkwd{fn}\hlstd{(p, M, type)))}
+\hlstd{\}}
+
+\hlstd{post.params} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{t}\hlstd{,} \hlkwc{X}\hlstd{,} \hlkwc{M}\hlstd{,} \hlkwc{type}\hlstd{,} \hlkwc{fn}\hlstd{,} \hlkwc{delta}\hlstd{,} \hlkwc{q}\hlstd{) \{}
+
+    \hlcom{# Create precision matrix from hyperparameters}
+    \hlstd{D} \hlkwb{<-} \hlstd{delta}\hlopt{/}\hlstd{q} \hlopt{*} \hlkwd{diag}\hlstd{(M}\hlopt{+}\hlnum{1}\hlstd{)}
+
+    \hlcom{# Transform inputs into features}
+    \hlstd{phi} \hlkwb{<-} \hlkwd{makephi}\hlstd{(X, fn, M, type)}
+
+    \hlcom{# Plugin to analytical form!}
+    \hlstd{Q} \hlkwb{<-} \hlstd{q} \hlopt{*} \hlstd{(D} \hlopt{+} \hlkwd{t}\hlstd{(phi)} \hlopt{%*%} \hlstd{phi)}
+    \hlstd{w} \hlkwb{<-} \hlkwd{solve}\hlstd{(D} \hlopt{+} \hlkwd{t}\hlstd{(phi)} \hlopt{%*%} \hlstd{phi)} \hlopt{%*%} \hlkwd{t}\hlstd{(phi)} \hlopt{%*%} \hlstd{t}
+
+    \hlkwd{list}\hlstd{(}\hlkwc{w}\hlstd{=w,}\hlkwc{Q}\hlstd{=Q)}
+\hlstd{\}}
+
+\hlstd{bayes.estimator} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{w}\hlstd{,} \hlkwc{Q}\hlstd{,} \hlkwc{type}\hlstd{) \{}
+    \hlstd{M} \hlkwb{<-} \hlkwd{length}\hlstd{(w)} \hlopt{-} \hlnum{1}
+
+    \hlkwa{function} \hlstd{(}\hlkwc{X}\hlstd{) \{}
+        \hlkwd{makephi}\hlstd{(X, phix, M, type)} \hlopt{%*%} \hlstd{w}
+    \hlstd{\}}
+\hlstd{\}}
+
+\hlstd{params.poly} \hlkwb{<-} \hlkwd{post.params}\hlstd{(}\hlkwd{as.vector}\hlstd{(dat.raw}\hlopt{$}\hlstd{t), dat.raw}\hlopt{$}\hlstd{x,} \hlnum{9}\hlstd{,} \hlstr{"poly"}\hlstd{, phix,} \hlnum{2}\hlstd{,} \hlnum{100}\hlstd{)}
+\hlstd{params.gauss} \hlkwb{<-} \hlkwd{post.params}\hlstd{(}\hlkwd{as.vector}\hlstd{(dat.raw}\hlopt{$}\hlstd{t), dat.raw}\hlopt{$}\hlstd{x,} \hlnum{9}\hlstd{,} \hlstr{"gauss"}\hlstd{, phix,} \hlnum{2}\hlstd{,} \hlnum{100}\hlstd{)}
+
+\hlstd{fn.poly} \hlkwb{<-} \hlkwd{bayes.estimator}\hlstd{(params.poly}\hlopt{$}\hlstd{w, params.poly}\hlopt{$}\hlstd{Q,} \hlstr{"poly"}\hlstd{)}
+\hlstd{fn.gauss} \hlkwb{<-} \hlkwd{bayes.estimator}\hlstd{(params.gauss}\hlopt{$}\hlstd{w, params.gauss}\hlopt{$}\hlstd{Q,} \hlstr{"gauss"}\hlstd{)}
+
+\hlstd{dat.raw} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(x, t))} \hlopt{+}
+    \hlkwd{geom_point}\hlstd{()} \hlopt{+}
+    \hlkwd{stat_function}\hlstd{(}\hlkwc{fun} \hlstd{= fn.poly,} \hlkwd{aes}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlstr{"poly"}\hlstd{))} \hlopt{+}
+    \hlkwd{stat_function}\hlstd{(}\hlkwc{fun} \hlstd{= fn.gauss,} \hlkwd{aes}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlstr{"gauss"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\end{document}

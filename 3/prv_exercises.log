@@ -1,0 +1,56 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  22 OCT 2016 19:02
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**&pdflatex prv_exercises.ini \nonstopmode\nofiles\PassOptionsToPackage{active,
+tightpage,auctex}{preview}\AtBeginDocument{\ifx\ifPreview\undefined\RequirePack
+age[displaymath,floats,graphics,textmath,sections,footnotes]{preview}[2004/11/0
+5]\fi} \input exercises.tex
+(./prv_exercises.ini
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/carlisle/mylatex.ltx)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/.tex File ignored))
+No auxiliary output files.
+
+(./exercises.tex
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1 \hat
+        {t}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \hat
+        {t}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1.
+)
+! Emergency stop.
+<*> ...eview}[2004/11/05]\fi} \input exercises.tex
+                                                  
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 29 strings out of 493089
+ 712 string characters out of 6134842
+ 53199 words of memory out of 5000000
+ 3604 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 19i,2n,12p,497b,56s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
