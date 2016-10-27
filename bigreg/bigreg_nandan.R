@@ -23,8 +23,6 @@
 
 
 
-
-
 ##############################
 ## Prepare R
 ##############################
@@ -55,7 +53,6 @@ HiggsDir <- paste0(mydir, "/", "HIGGS")
 AirlinesDir <- paste0(mydir, "/", "airlines"); cdir <- getwd()
 
 
-
 ##############################
 ## Higgs data
 ##############################
@@ -74,7 +71,6 @@ Higgs_ffdf <- read.csv.ffdf(file = "HIGGSdata.csv",
 Higgs_ffdf$test <- c(ff(0, 10500000), ff(1, 500000))
 # Write ffdf object to the disk and go back to the working directory
 save.ffdf(Higgs_ffdf, dir = "./HIGGSffdf", overwrite = TRUE)
-setwd(cdir)
 
 ## Prepare a big.matrix object
 Higgs_bigmatrix <- read.big.matrix(filename = "HIGGSdata.csv",
@@ -91,7 +87,7 @@ setwd(cdir)
 ##############################
 ## Airlines data
 ##############################
-
+years <- 1987:2008 
 vars <- c("Year", "Month", "DayofMonth", "DayOfWeek", "DepTime",
           "CRSDepTime", "ArrTime", "CRSArrTime", "UniqueCarrier",
           "FlightNum", "TailNum", "ActualElapsedTime",
