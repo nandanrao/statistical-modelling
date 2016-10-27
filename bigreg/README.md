@@ -7,7 +7,7 @@ Launch an EC2 instance. It can technically be any size, but you'll be limited to
 
 * Get to the "Add Storage" page in the instance configuration (Step 4).
 
-* Change the Volume Type of the EBS volume from "General Purpose SSD" to "Throughput Optimized HDD", and change the size to 4000GB. EBS costs hardly anything to run for a few hours, and HDD is cheap, so it will be < 1$. It's the read performance we want. 
+* Change the Volume Type of the EBS volume from "General Purpose SSD" to "Throughput Optimized HDD".Default volume size should be 500gb, which is what we want. EBS costs hardly anything to run for a few hours, and HDD is cheap, so it will be < 1$. It's the read performance we want. 
 
 * Open port 8787 in the security group attached to your EC2 instance.
 
