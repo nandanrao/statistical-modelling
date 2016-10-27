@@ -3,17 +3,13 @@
 ### EC2
 Launch an EC2 instance. It can technically be any size, but you'll be limited to those resources in RStudio, of course. Might be smart to go with an instance with a few cores, as the script installs multi-core libraries.
 
-BEFORE YOU LAUNCH THE INSTANCE:
+* Choose the AMI "nandan-bigreg" from community AMI's. ID: ami-6197df12
 
-Get to the "Add Storage" page in the instance configuration (Step 4).
+* Get to the "Add Storage" page in the instance configuration (Step 4).
 
-Change the Volume Type of the EBS volume from "General Purpose SSD" to "Throughput Optimized HDD", and change the size to 4000GB. EBS costs hardly anything to run for a few hours, and HDD is cheap, so it will be < 1$. It's the read performance we want. 
+* Change the Volume Type of the EBS volume from "General Purpose SSD" to "Throughput Optimized HDD", and change the size to 4000GB. EBS costs hardly anything to run for a few hours, and HDD is cheap, so it will be < 1$. It's the read performance we want. 
 
-
-Choose the AMI "nandan-bigreg" from community AMI's. ID: ami-6197df12
-
-### Security Group
-Open port 8787 in the security group attached to your EC2 instance.
+* Open port 8787 in the security group attached to your EC2 instance.
 
 
 ### Run RStudio Server
