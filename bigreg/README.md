@@ -1,7 +1,7 @@
 # RStudio Server with BigReg
 
 ### EC2
-Launch an EC2 instance. It can technically be any size, but you'll be limited to those resources in RStudio, of course. Might be smart to go with an instance with a few cores, as the script installs multi-core libraries.
+Launch an EC2 instance. It can technically be any size, but you'll be limited to those resources in RStudio, of course. Might be smart to go with an instance with a few cores, as the script installs multi-core libraries. I'm using a C4.2XLarge - $0.48/hr.
 
 * Choose the AMI "nandan-bigreg" from community AMI's. ID: ami-6197df12
 
