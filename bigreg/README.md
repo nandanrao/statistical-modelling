@@ -18,7 +18,8 @@ SSH into your instance and run the following commands (you can just copy and pas
 ```
 sudo mount /dev/xvdb /bigreg && mkdir /bigreg/tmp 
 sudo chmod 777 /bigreg/tmp && chmod 777 /bigreg/HIGGS && chmod 777 /bigreg/airlines
-wget http://stat-computing.org/dataexpo/2009/2008.csv.bz2 /bigreg/airlines/2008.csv.bz2 && bzip2 -kdv /bigreg/airlines/2008.csv.bz2
+wget http://stat-computing.org/dataexpo/2009/2008.csv.bz2 /bigreg/airlines/2008.csv.bz2 
+bzip2 -kdv /bigreg/airlines/2008.csv.bz2
 sudo blockdev --setra 2048 /dev/xvdb
 sudo service docker restart
 sudo docker run -d -p 8787:8787 -v /bigreg/tmp/:/tmp -v /bigreg/:/bigreg rocker/rstudio
