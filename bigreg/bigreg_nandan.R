@@ -51,7 +51,7 @@ library(bigmemory)
 mydir <- "/bigreg"
 HiggsDir <- paste0(mydir, "/", "HIGGS")
 AirlinesDir <- paste0(mydir, "/", "airlines"); cdir <- getwd()
-
+setwd(mydir)
 
 ##############################
 ## Higgs data
