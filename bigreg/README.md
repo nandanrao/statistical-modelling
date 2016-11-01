@@ -1,4 +1,45 @@
-# RStudio Server with BigReg
+# RStudio Server with BigReg v2!
+
+### Improvements
+
+* starts with ffdf files, much faster to run script! 
+* opens port 80, so can be used by eduroam
+* fewer steps to setup
+
+### EC2
+Launch an EC2 instance. It can technically be any size, but you'll be limited to those resources in RStudio, of course. Might be smart to go with an instance with a few cores, as the script installs multi-core libraries. I'm using a C4.2XLarge - $0.48/hr.
+
+* Choose the AMI "nandan-bigreg-2" from community AMI's.
+
+* Storage should already be added.
+
+* Open port 80 in the security group attached to your EC2 instance.
+
+
+### Run RStudio Server
+SSH into your instance and run the following commands (you can just copy and paste the whole block into your SSH terminal):
+
+```
+sudo mount /dev/xvdb /bigreg 
+sudo blockdev --setra 2048 /dev/xvdb
+sudo service docker restart
+sudo docker run -d -p 80:8787 -v /bigreg/tmp/:/tmp -v /bigreg/:/bigreg rocker/rstudio
+```
+
+Get the public IP address of your EC2 instance, and navigate to the IP (no need to enter port) in your browser.
+
+Login to RStudio with the following credentials:
+
+password: rstudio
+username: rstudio
+
+### Run the script
+
+Just copy and paste bigreg_nandan_2.R into a new R Script and run it, should work!
+
+
+
+# RStudio Server with BigReg - v1 - deprecated ;D
 
 ### EC2
 Launch an EC2 instance. It can technically be any size, but you'll be limited to those resources in RStudio, of course. Might be smart to go with an instance with a few cores, as the script installs multi-core libraries. I'm using a C4.2XLarge - $0.48/hr.

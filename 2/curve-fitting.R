@@ -51,16 +51,17 @@ bayes.estimator <- function (w, Q, type) {
 }
 
 dat.raw <- read.csv("curve_data.txt", sep=" ")
-params.poly <- post.params(as.vector(dat.raw$t), dat.raw$x, 9, "poly", phix, 2, 100)
-params.gauss <- post.params(as.vector(dat.raw$t), dat.raw$x, 9, "gauss", phix, 2, 100)
-
-fn.poly <- bayes.estimator(params.poly$w, params.poly$Q, "poly")
-fn.gauss <- bayes.estimator(params.gauss$w, params.gauss$Q, "gauss")
 
 dat.raw %>%
     ggplot(aes(x, t)) +
     geom_point()
 
+
+params.poly <- post.params(as.vector(dat.raw$t), dat.raw$x, 9, "poly", phix, 2, 100)
+params.gauss <- post.params(as.vector(dat.raw$t), dat.raw$x, 9, "gauss", phix, 2, 100)
+
+fn.poly <- bayes.estimator(params.poly$w, params.poly$Q, "poly")
+fn.gauss <- bayes.estimator(params.gauss$w, params.gauss$Q, "gauss")
 
 dat.raw %>%
     ggplot(aes(x, t)) +
