@@ -1,0 +1,214 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{mathtools,amsfonts,amssymb,bm,cmbright, commath,multicol,fancyhdr, sansmath}
+\usepackage[sfdefault,light]{roboto}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{15/11/2016 ::: Nandan Rao}
+\lhead{14D001 ::: Homework Set 2}
+\rfoot{\thepage}
+
+\begin{document}
+
+\section*{Slides 6}
+
+\subsection*{Problem 2.1}
+
+The bernouli likelihood function, defined for random variable $t \in {-1,1}$, takes the form:
+%
+\begin{align*}
+p(t = 1) &= p \\
+p(t = -1) &= 1 - p
+\end{align*}
+%
+If we now consider a sigmoid function $\sigma(u)$ which gives us a bernouli probability, $p \in [0,1]$, we then get the following:
+%
+\begin{align*}
+p(t = 1) &= \sigma(u) \\
+p(t = -1) &= 1 - \sigma(u)
+\end{align*}
+%
+If we consider the situation where $\sigma(u)$ is the logistic function:
+%
+\begin{align*}
+p(t = 1) &= \frac{1}{1 + e^{-u}} \\
+p(t = -1) &= 1 - \frac{1}{1 + e^{-u}} \\
+\end{align*}
+%
+The sigmoid/logistic function has the special property that in addition to have an output bounded between $[0,1]$, it's first derivative is also symmetric around 0. This is to say that from $[0, \infty]$, the function moves towards 1 at the exact same rate it moves towards 0 over the range $[0, -\infty]$. This implies the following:
+%
+$$
+\sigma(u) = 1 - \sigma(-u)
+$$
+%
+Using this, we can rewrite our previous pair of equations:
+%
+\begin{align*}
+p(t = 1) &= \frac{1}{1 + e^{-u}} \\
+p(t = -1) &= \frac{1}{1 + e^{u}} \\
+\end{align*}
+%
+Or better still:
+$$
+p(t) = \frac{1}{1 + e^{-tu}}
+$$
+If we then plug the linear model $\bm{w}^T\phi(x) + b$ in for u, we find exactly the large margin classifier with the logistic loss function:
+%
+$$
+p(t) = \frac{1}{1 + \exp \Big\{ -t(\bm{w}^T\phi(x) + b) \Big\} }
+$$
+
+\subsection*{Problem 2.2}
+
+The MAP estimator is given, as per usual:
+%
+$$
+w_{MAP} = \argmax_w p( \bm{t} | \bm{w}, X)p(\bm{w})
+$$
+%
+Our $\bm{t}$ observed variables are bernouli $t \in {-1,1}$, and the linear model we are applying on our data to map it to our bernouli predictions is the logistic function. Our likelihood function $ p( \bm{t} | \bm{w}, X) $, is therefore exactly what we found in 2.1, while our prior on $\bm{w}$ is Gaussian. We include only the terms that are dependent on $\bm{w}$ and assume independence between rows of our design matrix:
+%
+\begin{align*}
+w_{MAP} &= \argmax_w \prod_n \Bigg( \frac{1}{1 + \exp\Big\{ -t_n(\bm{w}^T{\phi}(x_n) + b)  \Big\} } \Bigg) * \exp \Big\{ -\frac{1}{2}\bm{w}^T \lambda N\ \bm{w} \Big\} \\
+w_{MAP} &= \argmax_w \sum_n \Big( - \log \Big( 1 + \exp\Big\{  -t_n(\bm{w}^T{\phi}(x_n) + b)  \Big\} \Big)\Big) - \frac{\lambda N}{2}\bm{w}^T \bm{w} \\
+w_{MAP} &= \argmin_w \sum_n \log \Big( 1 + \exp\Big\{ -t_n(\bm{w}^T{\phi}(x_n) + b)  \Big\} \Big) + \frac{\lambda }{2} \bm{w}^T \bm{w}
+\end{align*}
+%
+
+\section*{Slides 7}
+
+\subsection*{Problem 2}
+
+The probability that a new point belongs to any given mixture k is the joint probability of that data and the latent variable that points to that particular mixture. We decompose this into the conditional probability of the data given that particular mixture multiplied by the prior on the probability of that mixture. To coerce this into a probability, we normalize by the sum of the probabilities that the point belongs to each mixture k:
+%
+\begin{align*}
+\Pi_k &= \frac{p(x_{n+1}, z_k)}{\sum_i^K p(x_{n+1} | z_i)} \\
+\Pi_k &= \frac{p(x_{n+1} | z_k)p(z_k)}{\sum_i^K p(x_{n+1} | z_i)}
+\end{align*}
+%
+We will focus on determining the formula for the numerator, for one particular k, as this is simply repeated for all k's to create a vector of probabilities, and the denominator follows directly from the numerator. The latent variable $z_k$ corresponds to the mean $\mu_k$ and precision $Q_k$ for that particular guassian, so we compute the probability that $x_{n+1}$ came from that gaussian, multiplied by whatever our prior probability was on that gaussian:
+
+$$
+p(x_{n+1} | z_k)p(z_k)
+$$
+$$
+\frac{exp \Big\{ -\frac{1}{2} (x_{n+1} - \mu_k)^T Q (x_{n+1} - \mu_k) \Big\} }{\sqrt{|2\pi Q^{-1}|}} * p(z_k)
+$$
+
+
+\subsection*{Problem 5}
+
+\subsubsection*{Robust Regression}
+
+Assuming $\nu$ is fixed and applying bayes theorum:
+%
+\begin{align*}
+p( \eta_n | t_n, \nu ) &= \frac{p(t_n | \nu, \eta_n) p(\eta_n | \nu)}{p(t_n)} \\
+p( \eta_n | t_n, \nu ) &= \frac{p(t_n, \eta_n | \nu)}{p(t_n)}
+\end{align*}
+%
+In robust regression we model the observed data, $\bm{t}$, as gaussian, but where the gaussian for every observation has a variance derived from a latent variable $\eta_n$ which itself is a random variable picked from a gamma distribution. As shown above, this can be rewritten as the joint distribution of two random variables, $t_n$ and $\nu_n$, which coincides with the definition of the NormalGamma distribution.
+
+\subsubsection*{Logistic and Probit Models}
+
+%
+$z_n$ is given as a univariate random variable that consists of a linear combination of $\phi(\bm{x}_n)^T\bm{w}$ plus noise, whose distribution is either gaussian or logistic.
+%
+$$
+p(z_n | \bm{w}, \bm{x}_n) \thicksim \mathcal{N}(\phi(\bm{x}_n)^T\bm{w}, \sigma^2)
+$$
+$$
+p(z_n | \bm{w}, \bm{x}_n) \thicksim Logistic(\phi(\bm{x}_n)^T\bm{w}, \frac{\sqrt{3}\sigma}{\pi})
+$$
+%
+$t_n$ is given to us as $t_n = 1[z_n > 0]$, meaning in terms of $z_n$:
+%
+\begin{align*}
+p(z_n \leq 0 | t_n = 1) &= 0 \\
+p(z_n > 0 | t_n = 1) &= 1 \\
+p(z_n \leq 0 | t_n = 0) &= 1 \\
+p(z_n  > 0 | t_n = 0) &= 0
+\end{align*}
+%
+Which would imply that conditioning $z_n | \bm{w}, \bm{x}_n$ on $t_n$ as well, provides us no additional information beyond the sign of $z_n$. The mean of our distributions is deterministically decided by the linear combination of data and weights, $\phi(\bm{x}_n)^T\bm{w}$, however we now have a truncated for for this distribution, as we know the sign of the outcome variable. This implies:
+
+\begin{align*}
+p(z_n | \bm{w}, \bm{x}_n, t_n = 1) &= p(z_n | \bm{w}, \bm{x}_n, z_n > 0) \\
+p(z_n | \bm{w}, \bm{x}_n, t_n = 0) &= p(z_n | \bm{w}, \bm{x}_n, z_n \leq 0)
+\end{align*}
+%
+We understand a truncated distribution to be the distribution that would follow if we threw away all values that were outside of the truncation line, and re-drew from the distribution. Following from that definition of a truncated distribution, it is known the distribution can be written as:
+%
+\begin{align*}
+p(y | y > 0) &= \frac{p(y)}{1 - p(y \leq 0)} \\
+p(y | y \leq 0) &= \frac{p(y)}{p(y \leq 0)}
+\end{align*}
+%
+The intuition behind this is that we want to scale the bounded distribution UP by the amount of the unbounded distribution found outside of the boundary, which equates to dividing by the percent of the unbounded distribution found within the boundary. We will define a function, $g(x)$ to be the CDF any random variable x evaluated at 0:
+
+$$
+g(x) = \Phi_x(0) = p(x \leq 0)
+$$
+
+This becomes convenient to rewrite to include both possible values of $t$ and here we have our density of $z_n | \bm{w}, \bm{x}_n, t_n$:
+%
+\begin{align}
+p(z_n | \bm{w}, \bm{x}_n, t_n) &= \frac{p(z_n | \bm{w}, \bm{x}_n)}{g(z_n | \bm{w}, \bm{x}_n)(g(z_n| \bm{w}, \bm{x}_n)^{-1} - g(z_n | \bm{w}, \bm{x}_n))^{t_n}}
+\end{align}
+%
+Now we define $g(z_n | \bm{w}, \bm{x}_n)$ and $p(z_n | \bm{w}, \bm{x}_n)$ for both guassian and logistic densities, which will allow us to use (1) to solve for $z_n | \bm{w}, \bm{x}_n, t_n$ for probit and logit models, respectively:
+
+
+\subsubsection*{ALTERNATE}
+%
+We will consider a general case of K discrete possible values for $t$, which will easily hold true for our binomial case, and will be shown to be a more general expression of the truncated distribution in the currently-considered binomial case. We can marginalize over $t$:
+%
+$$
+p(z_n | \bm{w}, \bm{x}_n) = \sum_k p(z_n | \bm{w}, \bm{x}_n, t_k)p(t_k | \bm{w}, \bm{x}_n)
+$$
+%
+Expanding the sum over possible values of $t$, and gathering terms, we come to:
+%
+\begin{align*}
+p(z_n | \bm{w}, \bm{x}_n, t_n) &= \frac{p(z_n | \bm{w}, \bm{x}_n) - \sum_{k \neq n}^K p(z_n | \bm{w}, \bm{x}_n, t_k)p(t_k | \bm{w}, \bm{x}_n)}{p(t_n | \bm{w}, \bm{x}_n)}
+\end{align*}
+%
+We gather the marginal distributions into their joint distribution as follows:
+%
+\begin{align}
+p(z_n | \bm{w}, \bm{x}_n, t_n) &= \frac{p(z_n | \bm{w}, \bm{x}_n) - \sum_{k \neq n}^K p(z_n, t_k | \bm{w}, \bm{x}_n)}{p(t_n | \bm{w}, \bm{x}_n)}
+\end{align}
+%
+We can begin to see some things in the above equation that match our intuition, and similarly match the definition of a truncated distribution, where we have turned a continous distribution function into a piece-wise function that returns 0 over certain intervals. For any $z_n$ that deterministically gives us $t_k$:
+%
+$$
+p(z_n | \bm{w}, \bm{x}_n) = p(z_n, t_k | \bm{w}, \bm{x}_n)
+$$
+%
+Together with our (2), this gives us the desired result that for any $z_n$ that deterministically gives us $t_k$, where $t_k \neq t_n$:
+%
+$$
+p(z_n | \bm{w}, \bm{x}_n, t_n) = 0
+$$
+%
+This gives us a probability function that will return 0 for any $z_n$ outside of the range of the $t_n$ it is conditioned upon, and for every other value of $z_n$ will return:
+%
+\begin{align}
+p(z_n | \bm{w}, \bm{x}_n, t_n) &= \frac{p(z_n | \bm{w}, \bm{x}_n)}{p(t_n | \bm{w}, \bm{x}_n)}
+\end{align}
+%
+We will show that $p(t_n | \bm{w}, \bm{x}_n)$ is equal to the probability given by the CDF of $p(z_n | \bm{w}, \bm{x}_n)$ of $z_n$ being within the range of $t_n$, which relates back to the truncated distribution over $z_n$, which attempts to scale up the probabilities within the range by the amount of total distributed mass outside the range. We now plug in the gaussian and logistic distribution functions for the probit and logit models, respectively:
+
+
+
+\subsubsection*{Gaussian Mixture Models}
+
+See probelm 2?
+
+\section*{Slides 8}
+
+\subsection*{}
+
+\end{document}

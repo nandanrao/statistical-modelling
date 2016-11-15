@@ -49,89 +49,18 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
-\usepackage{mathtools,amsfonts,amssymb,cmbright,bm,commath,multicol,fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{3/11/2016 || Nandan Rao}
-\lhead{12D001 || Multiple Testing}
-\rfoot{\thepage}
+\usepackage{mathtools,amsfonts,amssymb,cmbright,bm,commath,multicol}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-\section{Distribution of P-value Under the Null}
+\normalsize 14D001 || Multiple Testing || Nandan Rao || 1/11/2016
+
+\section{Distribution of p-value under the null}
 
 \subsection{}
 
-\begin{align*}
-\alpha &= 1 - F_H(C_{\alpha}) \\
-F_H(C_{\alpha}) &= 1 - \alpha \\
-C_{\alpha} &= F^{-1}_H(1 - \alpha)
-\end{align*}
 
-\subsection{}
-
-Given $\alpha = 1 - F_H(C_{\alpha})$ and the definition of the p-value as the smallest $\alpha$ for which $T(x) > C_{\alpha}$, and the knowledge that $F_H$ is continuous and increasing:
-
-\begin{align*}
-\alpha &= 1 - F_H(C_{\alpha}) \\
-p(X) &= 1 - F_H(T(X))
-\end{align*}
-
-
-
-
-\subsection{}
-
-Given a random variable y, drawn from an unknown distribution with cumulative distribution function F, we want to find the probability distribution of F(y). We will find the CDF of F(y), which we will call G:
-
-$$
-G(x) = \mathbb{P}(F(y) \leq x)
-$$
-
-Because F is a CDF, we know it is continuous, and therefore invertible with a unique solution when $x \in (0,1)$, which we will restrict ourselves to from now on:
-
-$$
-G(x) = \mathbb{P}(y \leq F^{-1}(x))
-$$
-
-And the probability that a random variable y is less than or equal to some other random variable, is by definition the CDF of y. In this case, that random variable, is $F^{-1}(x)$:
-
-$$
-G(x) = F(F^{-1}(x))
-$$
-
-Which leads us to the CDF for a uniform distribution, which is by definition $F_{uni}(X) = X$ within our interval [0, 1]:
-
-$$
-G(x) = x
-$$
-
-We can repeat the same for 1 - F(y), restricting again $x \in(0, 1)$, and again we end up with another uniform distribution function, this time over the interval [1, 0]:
-
-\begin{align*}
-G(x) &= \mathbb{P}(1 - F(y) \leq x) \\
-G(x) &= \mathbb{P}(y \leq F^{-1}(1 - x)) \\
-G(x) &= F(F^{-1}(1 - x)) \\
-G(x) &= 1 - x
-\end{align*}
-
-\subsection{}
-
-We have proven that for any univariate random variable y with distribution $F_y$, G(x) is uniformaly distributed:
-
-$$
-G(x) = 1 - F_y(y)
-$$
-
-$F_H$ is defined as the distribution of T(x) under H. The p-value can be shown to be directly plugged into the above definition, proving that the p-value is uniformly distributed:
-
-\begin{align*}
-G(x) &= 1 - F_y(y) \\
-p-value &= 1 - F_H(T(x))
-\end{align*}
-
-
-\section{MT Under Independence Assumptions}
+\section{Multiple testing under independence assumptions}
 
 \subsection{}
 
@@ -178,7 +107,7 @@ Let $\alpha_0$ represent the significance level with which we reject each indivi
 \begin{align*}
 \alpha &= 1 - (1 - \alpha_0)^m \\
 1 - \alpha &= (a - \alpha_0)^m \\
-(a - \alpha)^{\frac{1}{m}} &= 1 - \alpha_0 \\
+(a - \alpha)^{\frac{1}{m}} &= 1 - alpha_0 \\
 \alpha_0 &= 1 - (1 - \alpha)^{\frac{1}{m}}
 \end{align*}
 
@@ -186,35 +115,20 @@ Let $\alpha_0$ represent the significance level with which we reject each indivi
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/plot_error_rate_functions-1}
+\includegraphics[width=\maxwidth]{figure/coefficients-1} 
 
 \end{knitrout}
 
 \subsection{}
 
-
-We consider all situations where $\alpha \in [0,1]$ and all $m \geq 1$, where for all positive real values for x, we can say that $x \geq \frac{x}{m}$. From this it follows that $f_3(\alpha) \geq f_2(\alpha)$. We can say that for all $x \in [0,1]$, $x^{\frac{1}{m}} \geq x$ for all $m \geq 1$. Reliant on this, we can easily prove our remaining inequalities:
-
-\begin{align*}
-f_3(\alpha) &\geq f_1(\alpha) \\
-\alpha &\geq 1 - (1 - \alpha)^{\frac{1}{m}} \\
-(1 - \alpha)^{\frac{1}{m}} &\geq 1 - \alpha
-\end{align*}
-
-And similarly for $f_2(\alpha) \leq f_1(\alpha)$:
-
-\begin{align*}
-f_1(\alpha) &\geq f_2(\alpha) \\
-1 - (1 - \alpha)^{\frac{1}{m}} &\geq \frac{\alpha}{m} \\
-1 - \frac{\alpha}{m} &\geq (1 - \alpha)^{\frac{1}{m}}
-\end{align*}
+We consider all situations where $\alpha \in [0,1]$ and all $m \geq 1$ to prove that $f_2(\alpha) \leq f_1(\alpha)$:
 
 
 \subsection{}
 Under independence assumptions, as shown in (2.3), the significance level needed for each test, $\alpha_0$, is shown to be $1 - (1 - \alpha)^{\frac{1}{m}}$. Making now correction for multiple testing, we follow the generic per-comparisson error rate (PCER), and accept or reject each individual test at $\alpha_0 = \alpha$. As shown in (2.5):
 
 $$
-\alpha \geq 1 - (1 - \alpha)^{\frac{1}{m}}
+\alpha &\geq 1 - (1 - \alpha)^{\frac{1}{m}}
 $$
 
 And from that we can see that the significance level needed for each individual test if we consider each test p-value as being I.I.D. from a uniform distribution, is much lower if we consider the joint probability of all our tests and aim to keep the probability of rejecting one or more null hypothesis at our significance level, then if we make no correction for the joint probability of our multiple tests.
@@ -230,37 +144,12 @@ $$
 If we consider $\bm{Y}_1, ... \bm{Y}_m$ to be p-values drawn from a uniform distribution from 0 to 1, we can state that the probability of any given $\bm{Y}_i \leq \alpha$, where $\alpha \in [0,1]$, is equal to $\alpha$. This leads to the following:
 
 \begin{align*}
-\mathbb{P}_{C - H} \big( \cup_{i=1}^m \set{ p_i(\bm{Y}_i) \leq \alpha } \big) &\leq \sumS_{i=1}^m \mathbb{P}(\bm{Y}_i \leq \alpha) \\
+\mathbb{P}_{C - H} \big( \cup_{i=1}^m \set{ p_i(\bm{Y}_i) \leq \alpha } \big) &\leq \sum_{i=1}^m \mathbb{P}(\bm{Y}_i \leq \alpha) \\
 \mathbb{P}_{C - H} \big( \cup_{i=1}^m \set{ p_i(\bm{Y}_i) \leq \alpha } \big) &\leq \sum_{i=1}^m \alpha \\
 \mathbb{P}_{C - H} \big( \cup_{i=1}^m \set{ p_i(\bm{Y}_i) \leq \alpha } \big) &\leq m\alpha \\
 \end{align*}
 
-The lower bound is easily understood with the previous statements regarding  $\bm{Y}_1, ... \bm{Y}_m$ to be drawn from uniform (0,1). We can consider the case of a single i, where we know the probability of a single rejection, $\mathbb{P}(\bm{Y}_i \leq \alpha)$ will be exactly $\alpha$.
-
-$$
-\mathbb{P}(\bm{Y}_i \leq \alpha) = \alpha
-$$
-
-If we increase the number of trials, the number of i's, the probability of rejecting a single hypothesis cannot possibly be LESS than the probability of rejecting a single hypothesis with one trial. Therefore, it is lower-bounded by the above $\alpha$:
-
-$$
-\alpha \leq \mathbb{P}_{C - H} \big( \cup_{i=1}^m \set{ p_i(\bm{Y}_i) \leq \alpha } \big)
-$$
-
-\section{Ordered P-values and Controlling the FDR}
-
- We've been given that for any set of ordered variables $y_i$ drawn from a uniform distribution with range (0,1):
-
-$$
-\mathbb{P}\bigg( \cap_{i=1}^m \set{ p_i \bigg(y_i > \frac{i\alpha}{m} \bigg) } \bigg) = 1 - \alpha
-$$
-
-As shown in 2.2, the probability of at least one false rejection under the complete null is the probability of any given p-value falling under our rejection threshold for that p-value. This is the complement of the probability of the above formula (which is the probability of all ordered uniform random variable falling above our threshold), and therefore can be calculated as following:
-
-\begin{align*}
-\mathbb{P}\bigg( \cup_{i=1}^m \set{ p_i \bigg( y_i < \frac{i\alpha}{m} \bigg) } \bigg) &= 1 - (1 - \alpha) \\
-\mathbb{P}\bigg( \cup_{i=1}^m \set{ p_i \bigg( y_i < \frac{i\alpha}{m} \bigg) } \bigg) &=  \alpha
-\end{align*}
+\section{Ordered p-values}
 
 
 
