@@ -1,6 +1,12 @@
-load("synth_reg.rda")
 
-##########################################################
+
+################### LOAD ####################################
+load("synth_reg.rda")
+library(dplyr)
+library(ggplot2)
+library(MASS)
+
+
 
 em <- function (T, X, iter = 10, nu = 10, tol=10**-3) {
 
@@ -41,10 +47,9 @@ likelihood <- function (T, X, Z, q, w, nu = 10, sum = TRUE, latent = TRUE) {
     for (i in 1:N) {
         sd <- sqrt(1/(q*Z[i]))
         likelihood <- dnorm(T[i], t(X[i,]) %*% w, sd, log=TRUE)
+        lat <- 0
         if (latent) {
             lat <- dgamma(Z[i], nu/2, nu/2 - 1, log=TRUE)
-        } else {
-            lat <- 0
         }
         s <- c(s, likelihood + lat)
     }
@@ -76,10 +81,10 @@ simulate.dev <- function (Mu, X, Z, q, w, N = 50, quan = .99, latent=TRUE) {
     quantile(dev, quan)
 }
 
+
 # Run our algorithm!
 X <- cbind(rep(1, nrow(synth_reg$Phy)), synth_reg$Phy)
 res <- em(synth_reg$t, X, iter=100, tol = -Inf)
-
 
 # MLE MODEL (LEAST SQUARES)
 lm.model<- lm(t ~ Phy, synth_reg)
@@ -87,8 +92,6 @@ lm.coef <- coefficients(lm.model)
 lm.Mu <- X %*% coef.lm
 lm.q <- 1
 lm.Z <- 1/rep(sd(X), nrow(X))
-
-
 
 
 # Weights with errors
@@ -141,3 +144,43 @@ data.frame(Likelihood = res.2$ll) %>%
     geom_vline(aes(xintercept = Iteration, color = factor(round(Change, 5)))) +
     scale_colour_discrete(name = "Change from Previous Iteration") +
     labs(title = "Log-Likelihood of EM Results Over Iterations")
+
+
+#######################################
+# CROSS VALIDATE!!
+#######################################
+
+my.split <- function (y, n) {
+
+    # support for matrix or vector
+    l <- ifelse(class(y) == 'matrix', nrow(y), length(y))
+    size <- floor(l/n)
+    lapply(1:n, function (i) {
+        tail(head(y, i*size), size)
+    })
+}
+
+
+cross.validation <- function (y, X, lam, pen.reg) {
+
+    # hardcode number of folds
+    n <- 5
+    sets.y <- my.split(y, n)
+    sets.X <- my.split(X, n)
+    RSS <- 0
+
+    for (i in 1:n) {
+        test.y <- sets.y[[i]]
+        test.X <- sets.X[[i]]
+
+        # ugliness for removing list
+        train.y <- unlist(sets.y[setdiff(1:n, i)])
+        train.X <- do.call(rbind, sets.X[setdiff(1:n, i)])
+
+        beta <- pen.reg(train.y, train.X, lam)
+
+        # We want the average of the RSS for all, so sum their fraction
+        RSS <- RSS + sum((test.y - test.X %*% beta)**2)/n
+    }
+    RSS
+}

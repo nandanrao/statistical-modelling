@@ -19,6 +19,9 @@
     "fancyhdr"
     "sansmath"
     "roboto")
+   (TeX-add-symbols
+    "argmin"
+    "argmax")
    (LaTeX-add-environments
     '("proof" LaTeX-env-args ["argument"] 0)
     '("prop" LaTeX-env-args ["argument"] 0)))

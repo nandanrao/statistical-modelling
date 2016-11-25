@@ -1,10 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  24 NOV 2016 20:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  25 NOV 2016 13:05
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input exercises.tex
-(./exercises.tex (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+**/Users/nandanrao/Documents/BGSE/statistical-modelling/7/exercises.tex
+(/Users/nandanrao/Documents/BGSE/statistical-modelling/7/exercises.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -21,32 +23,79 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip43
+\fb@frw=\dimen105
+\fb@frh=\dimen106
+\FrameRule=\dimen107
+\FrameSep=\dimen108
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count87
-\calc@Bcount=\count88
-\calc@Adimen=\dimen103
-\calc@Bdimen=\dimen104
-\calc@Askip=\skip43
-\calc@Bskip=\skip44
+\calc@Acount=\count88
+\calc@Bcount=\count89
+\calc@Adimen=\dimen109
+\calc@Bdimen=\dimen110
+\calc@Askip=\skip44
+\calc@Bskip=\skip45
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count89
-\calc@Cskip=\skip45
+\calc@Ccount=\count90
+\calc@Cskip=\skip46
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip46
+\@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -55,49 +104,49 @@ Package: amstext 2000/06/29 v2.01
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
-\ex@=\dimen105
+\ex@=\dimen111
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen106
+\pmbraise@=\dimen112
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count90
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count91
-\leftroot@=\count92
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count93
-\DOTSCASE@=\count94
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen107
+\big@size=\dimen113
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count95
-\c@MaxMatrixCols=\count96
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count97
-\dspbrk@lvl=\count98
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks16
-\row@=\count99
-\column@=\count100
-\maxfields@=\count101
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks17
-\eqnshift@=\dimen108
-\alignsep@=\dimen109
-\tagshift@=\dimen110
-\tagwidth@=\dimen111
-\totwidth@=\dimen112
-\lineht@=\dimen113
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
 \@envbody=\toks18
-\multlinegap=\skip47
-\multlinetaggap=\skip48
+\multlinegap=\skip48
+\multlinetaggap=\skip49
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
@@ -106,15 +155,15 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count102
-\l_MT_multwidth_dim=\dimen114
-\origjot=\skip49
-\l_MT_shortvdotswithinadjustabove_dim=\dimen115
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen116
-\l_MT_above_intertext_sep=\dimen117
-\l_MT_below_intertext_sep=\dimen118
-\l_MT_above_shortintertext_sep=\dimen119
-\l_MT_below_shortintertext_sep=\dimen120
+\g_MT_multlinerow_int=\count103
+\l_MT_multwidth_dim=\dimen120
+\origjot=\skip50
+\l_MT_shortvdotswithinadjustabove_dim=\dimen121
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen122
+\l_MT_above_intertext_sep=\dimen123
+\l_MT_below_intertext_sep=\dimen124
+\l_MT_above_shortintertext_sep=\dimen125
+\l_MT_below_shortintertext_sep=\dimen126
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -207,23 +256,23 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
-\c@tracingmulticols=\count103
+\c@tracingmulticols=\count104
 \mult@box=\box28
-\multicol@leftmargin=\dimen121
-\c@unbalance=\count104
-\c@collectmore=\count105
-\doublecol@number=\count106
-\multicoltolerance=\count107
-\multicolpretolerance=\count108
-\full@width=\dimen122
-\page@free=\dimen123
-\premulticols=\dimen124
-\postmulticols=\dimen125
-\multicolsep=\skip50
-\multicolbaselineskip=\skip51
+\multicol@leftmargin=\dimen127
+\c@unbalance=\count105
+\c@collectmore=\count106
+\doublecol@number=\count107
+\multicoltolerance=\count108
+\multicolpretolerance=\count109
+\full@width=\dimen128
+\page@free=\dimen129
+\premulticols=\dimen130
+\postmulticols=\dimen131
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
 \partial@page=\box29
 \last@line=\box30
-\maxbalancingoverflow=\dimen126
+\maxbalancingoverflow=\dimen132
 \mult@rightbox=\box31
 \mult@grightbox=\box32
 \mult@gfirstbox=\box33
@@ -245,29 +294,29 @@ Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
 \@tempa=\box49
 \@tempa=\box50
 \@tempa=\box51
-\c@columnbadness=\count109
-\c@finalcolumnbadness=\count110
-\last@try=\dimen127
-\multicolovershoot=\dimen128
-\multicolundershoot=\dimen129
+\c@columnbadness=\count110
+\c@finalcolumnbadness=\count111
+\last@try=\dimen133
+\multicolovershoot=\dimen134
+\multicolundershoot=\dimen135
 \mult@nat@firstbox=\box52
 \colbreak@box=\box53
-\mc@col@check@num=\count111
+\mc@col@check@num=\count112
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip52
-\f@ncyO@elh=\skip53
-\f@ncyO@erh=\skip54
-\f@ncyO@olh=\skip55
-\f@ncyO@orh=\skip56
-\f@ncyO@elf=\skip57
-\f@ncyO@erf=\skip58
-\f@ncyO@olf=\skip59
-\f@ncyO@orf=\skip60
+\fancy@headwidth=\skip53
+\f@ncyO@elh=\skip54
+\f@ncyO@erh=\skip55
+\f@ncyO@olh=\skip56
+\f@ncyO@orh=\skip57
+\f@ncyO@elf=\skip58
+\f@ncyO@erf=\skip59
+\f@ncyO@olf=\skip60
+\f@ncyO@orf=\skip61
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/sansmath/sansmath.sty
 Package: sansmath 2007/02/28  ver 1.1 Donald Arseneau
-\c@mv@sans=\count112
+\c@mv@sans=\count113
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `sans'
 (Font)                  OT1/cmbr/m/n --> OT1/cmbr/m/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsfsl' in version `sans'
@@ -300,7 +349,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks20
 \XKV@tempa@toks=\toks21
 )
-\XKV@depth=\count113
+\XKV@depth=\count114
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
@@ -406,75 +455,54 @@ LaTeX Info: Redefining \ttfamily on input line 70.
 )
 LaTeX Info: Redefining \oldstylenums on input line 188.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
 (./exercises.aux)
 \openout1 = `exercises.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 63.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    ... okay on input line 63.
 LaTeX Font Info:    Try loading font information for OT1+Roboto-LF on input lin
-e 13.
+e 63.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/roboto/OT1Roboto-LF.fd
 File: OT1Roboto-LF.fd 2015/04/16 (autoinst) Font definitions for OT1/Roboto-LF.
 
 )
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' will be
-(Font)              scaled to size 12.0pt on input line 13.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: pdftex.def on input line 94.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count114
+(Font)              scaled to size 12.0pt on input line 63.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
-\scratchdimen=\dimen130
+\scratchdimen=\dimen136
 \scratchbox=\box54
 \nofMPsegments=\count116
 \nofMParguments=\count117
 \everyMPshowfont=\toks22
 \MPscratchCnt=\count118
-\MPscratchDim=\dimen131
+\MPscratchDim=\dimen137
 \MPnumerator=\count119
 \makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks23
-))) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
@@ -518,26 +546,23 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\Gin@req@height=\dimen132
-\Gin@req@width=\dimen133
-)
 \c@mv@tabular=\count121
 \c@mv@boldtabular=\count122
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' will be
-(Font)              scaled to size 17.28pt on input line 15.
+(Font)              scaled to size 17.28pt on input line 65.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 15.
+(Font)              scaled to size 17.28pt on input line 65.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' will be
-(Font)              scaled to size 14.4pt on input line 17.
+(Font)              scaled to size 14.4pt on input line 67.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 17.
-LaTeX Font Info:    Try loading font information for OML+cmbrm on input line 19
+(Font)              scaled to size 14.4pt on input line 67.
+LaTeX Font Info:    Try loading font information for OML+cmbrm on input line 69
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 )
-LaTeX Font Info:    Try loading font information for OMS+cmbrs on input line 19
+LaTeX Font Info:    Try loading font information for OMS+cmbrs on input line 69
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cmbright/omscmbrs.fd
@@ -552,7 +577,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Overfull \hbox (6.03812pt too wide) in paragraph at lines 77--77
+Overfull \hbox (6.03812pt too wide) in paragraph at lines 127--127
 [] 
  []
 
@@ -564,7 +589,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 104.
+(Font)              scaled to size 12.0pt on input line 153.
+
+Overfull \hbox (24.92667pt too wide) in paragraph at lines 164--164
+[] 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -573,6 +602,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
+Overfull \hbox (29.6611pt too wide) in paragraph at lines 202--206
+\OT1/Roboto-LF/l/n/12 It is easy to see that through the de-fined re-la-tion-sh
+ip, $\OML/cmbrm/m/it/12 t[] \OT1/cmbr/m/n/12 = 1[\OML/cmbrm/m/it/12 z[] > \OT1/
+cmbr/m/n/12 0]$\OT1/Roboto-LF/l/n/12 , $\OML/cmbrm/m/it/12 p\OT1/cmbr/m/n/12 (\
+OML/cmbrm/m/it/12 t[]\OMS/cmbrs/m/n/12 j\OML/cmm/b/it/12 w\OT1/cmbr/m/n/12 , \O
+ML/cmm/b/it/12 x[]\OT1/cmbr/m/n/12 , \OML/cmbrm/m/it/12 z[]\OT1/cmbr/m/n/12 )$
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.0pt.
@@ -580,7 +617,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Overfull \hbox (37.95032pt too wide) detected at line 191
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5]
+Overfull \hbox (37.95032pt too wide) detected at line 273
 [] [] [] \OMS/cmbrs/m/n/12 ^^@ \OML/cmbrm/m/it/12 ^^Q\OT1/cmbr/m/n/12 ([] \OMS/
 cmbrs/m/n/12 ^^@ \OT1/cmbr/m/n/12 1)[][] [] [] \OMS/cmbrs/m/n/12 ^^@ []\OT1/cmb
 r/m/n/12 (\OML/cmbrm/m/it/12 ^^^\OT1/cmbr/m/n/12 (\OML/cmm/b/it/12 X[]\OT1/cmbr
@@ -595,40 +639,187 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5]
+[6]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.0pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] (./exercises.aux) ) 
+[7]
+Package color Info: Redefining color shadecolor on input line 322.
+ <figure/coefficients-1.pdf, id=40, 505.89pt x 433.62pt>
+File: figure/coefficients-1.pdf Graphic file (type pdf)
+
+<use figure/coefficients-1.pdf>
+Package pdftex.def Info: figure/coefficients-1.pdf used on input line 323.
+(pdftex.def)             Requested size: 390.0pt x 334.29204pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 323--324
+[][] 
+ []
+
+Package color Info: Redefining color shadecolor on input line 333.
+<figure/deviance-1.pdf, id=41, 505.89pt x 361.35pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 <./figure/coefficients-1.pdf>]
+File: figure/deviance-1.pdf Graphic file (type pdf)
+ <use figure/deviance-1.pdf>
+Package pdftex.def Info: figure/deviance-1.pdf used on input line 334.
+(pdftex.def)             Requested size: 390.0pt x 278.57669pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 334--335
+[][] 
+ []
+
+Package color Info: Redefining color shadecolor on input line 343.
+<figure/loglikelihood-1.pdf, id=51, 505.89pt x 289.08pt>
+File: figure/loglikelihood-1.pdf Graphic file (type pdf)
+
+<use figure/loglikelihood-1.pdf>
+Package pdftex.def Info: figure/loglikelihood-1.pdf used on input line 344.
+(pdftex.def)             Requested size: 390.0pt x 222.86134pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 344--345
+[][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./figure/deviance-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 354.
+ <figure/nu-1.pdf, id=61, 505.89pt x 361.35pt>
+File: figure/nu-1.pdf Graphic file (type pdf)
+
+<use figure/nu-1.pdf>
+Package pdftex.def Info: figure/nu-1.pdf used on input line 355.
+(pdftex.def)             Requested size: 390.0pt x 278.57669pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 355--356
+[][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <./figure/loglikelihood-1.pdf>]
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' will be
+(Font)              scaled to size 8.0pt on input line 362.
+Package color Info: Redefining color shadecolor on input line 363.
+LaTeX Font Info:    Try loading font information for OT1+cmtl on input line 364
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cmbright/ot1cmtl.fd
+File: ot1cmtl.fd 2005/04/13 v8.1 (WaS)
+)
+LaTeX Font Info:    Font shape `OT1/cmtl/m/it' in size <8> not available
+(Font)              Font shape `OT1/cmtl/m/sl' tried instead on input line 365.
+
+
+
+LaTeX Font Warning: Font shape `OT1/cmtl/bx/n' undefined
+(Font)              using `OT1/cmtl/m/n' instead on input line 366.
+
+LaTeX Font Info:    Try loading font information for OMS+cmtl on input line 371
+.
+LaTeX Font Info:    No file OMScmtl.fd. on input line 371.
+
+LaTeX Font Warning: Font shape `OMS/cmtl/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 371.
+
+LaTeX Font Info:    Try loading font information for TS1+cmtl on input line 512
+.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cmbright/ts1cmtl.fd
+File: ts1cmtl.fd 2005/04/13 v8.1 (WaS)
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 <./figure/nu-1.pdf>]
+Underfull \vbox (badness 10000) detected at line 557
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 557
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]
+Overfull \vbox (1.77779pt too high) detected at line 557
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14] (./exercises.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4677 strings out of 493089
- 67418 string characters out of 6134842
- 130598 words of memory out of 5000000
- 8050 multiletter control sequences out of 15000+600000
- 19030 words of font info for 48 fonts, out of 8000000 for 9000
+ 4885 strings out of 493089
+ 70946 string characters out of 6134842
+ 187317 words of memory out of 5000000
+ 8221 multiletter control sequences out of 15000+600000
+ 22261 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,13n,43p,510b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/robo
-to/rbto_oa6oe5.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/google/robot
-o/Roboto-Bold.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/google/roboto
-/Roboto-Light.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmib10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright
-/hfbr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfb
-r8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrbs10
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi8.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrsy8.pfb>
-Output written on exercises.pdf (6 pages, 150035 bytes).
+ 38i,13n,43p,750b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/roboto/rbto_oa6oe5.enc}</u
+sr/local/texlive/2015/texmf-dist/fonts/type1/google/roboto/Roboto-Bold.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/google/roboto/Roboto-Light.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrbs10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi8.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/hfbright/hfbrsl10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/hfbright/hfbrsy8.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/hfbright/hfsltl10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/hfbright/hftl10.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/cm-super/sfbtl10.pfb>
+Output written on exercises.pdf (14 pages, 283930 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 157 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
