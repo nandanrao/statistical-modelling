@@ -7,7 +7,6 @@ data {
 
 parameters {
   real<lower=0> sig_e;
-  real w0;
   vector[M] w;
   vector<lower=0>[N] z;
   real<lower=2> nu;
@@ -15,7 +14,9 @@ parameters {
 
 model {
   nu ~ cauchy(0, 1);
-  z ~ gamma(nu/2, nu/2 -1);
   w ~ normal(0, sig_e);
-  t ~ normal(rep_vector(w0, N) + Phy * w, z);
+
+  for(i in 1:N)
+    target += gamma_lpdf(z[i] | nu/2, nu/2 - 1) +  normal_lpdf(t[i] | Phy * w, z[i]);
+
 }

@@ -88,15 +88,16 @@ The probability that a new point belongs to any given mixture k is the joint pro
 \Pi_k &= \frac{p(x_{n+1} | z_k)p(z_k)}{\sum_i^K p(x_{n+1} | z_i)}
 \end{align*}
 %
-We will focus on determining the formula for the numerator, for one particular k, as this is simply repeated for all k's to create a vector of probabilities, and the denominator follows directly from the numerator. The latent variable $z_k$ corresponds to the mean $\mu_k$ and precision $Q_k$ for that particular guassian, so we compute the probability that $x_{n+1}$ came from that gaussian, multiplied by whatever our prior probability was on that gaussian:
-
+We will focus on determining the formula for the numerator, for one particular k, as this is simply repeated for all k's to create a vector of probabilities, and the denominator follows directly from the numerator. The latent variable $z_k$ corresponds to the mean $\mu_k$ and precision $Q_k$ for that particular guassian, so we compute the probability that $x_{n+1}$ came from that gaussian, multiplied by whatever our prior probability was on that gaussian (we could assume this is a):
+%
 $$
 p(x_{n+1} | z_k)p(z_k)
 $$
 $$
 \frac{exp \Big\{ -\frac{1}{2} (x_{n+1} - \mu_k)^T Q (x_{n+1} - \mu_k) \Big\} }{\sqrt{|2\pi Q^{-1}|}} * p(z_k)
 $$
-
+%
+And we have a formula for the numerator, as
 
 \subsection*{Problem 5}
 
@@ -105,63 +106,12 @@ $$
 Assuming $\nu$ is fixed and applying bayes theorum:
 %
 \begin{align*}
-p( \eta_n | t_n, \nu ) &= \frac{p(t_n | \nu, \eta_n) p(\eta_n | \nu)}{p(t_n)} \\
-p( \eta_n | t_n, \nu ) &= \frac{p(t_n, \eta_n | \nu)}{p(t_n)}
+p( \eta_n | t_n, \nu ) &= \frac{p(t_n | \nu, \eta_n) p(\eta_n | \nu)}{p(t_n, \nu)}
 \end{align*}
 %
-In robust regression we model the observed data, $\bm{t}$, as gaussian, but where the gaussian for every observation has a variance derived from a latent variable $\eta_n$ which itself is a random variable picked from a gamma distribution. As shown above, this can be rewritten as the joint distribution of two random variables, $t_n$ and $\nu_n$, which coincides with the definition of the NormalGamma distribution.
+In robust regression we model the observed data, $\bm{t}$, as gaussian, but where the gaussian for every observation has a variance derived from a latent variable $\eta_n$ which itself is a random variable picked from a gamma distribution.
 
 \subsubsection*{Logistic and Probit Models}
-
-%
-$z_n$ is given as a univariate random variable that consists of a linear combination of $\phi(\bm{x}_n)^T\bm{w}$ plus noise, whose distribution is either gaussian or logistic.
-%
-$$
-p(z_n | \bm{w}, \bm{x}_n) \thicksim \mathcal{N}(\phi(\bm{x}_n)^T\bm{w}, \sigma^2)
-$$
-$$
-p(z_n | \bm{w}, \bm{x}_n) \thicksim Logistic(\phi(\bm{x}_n)^T\bm{w}, \frac{\sqrt{3}\sigma}{\pi})
-$$
-%
-$t_n$ is given to us as $t_n = 1[z_n > 0]$, meaning in terms of $z_n$:
-%
-\begin{align*}
-p(z_n \leq 0 | t_n = 1) &= 0 \\
-p(z_n > 0 | t_n = 1) &= 1 \\
-p(z_n \leq 0 | t_n = 0) &= 1 \\
-p(z_n  > 0 | t_n = 0) &= 0
-\end{align*}
-%
-Which would imply that conditioning $z_n | \bm{w}, \bm{x}_n$ on $t_n$ as well, provides us no additional information beyond the sign of $z_n$. The mean of our distributions is deterministically decided by the linear combination of data and weights, $\phi(\bm{x}_n)^T\bm{w}$, however we now have a truncated for for this distribution, as we know the sign of the outcome variable. This implies:
-
-\begin{align*}
-p(z_n | \bm{w}, \bm{x}_n, t_n = 1) &= p(z_n | \bm{w}, \bm{x}_n, z_n > 0) \\
-p(z_n | \bm{w}, \bm{x}_n, t_n = 0) &= p(z_n | \bm{w}, \bm{x}_n, z_n \leq 0)
-\end{align*}
-%
-We understand a truncated distribution to be the distribution that would follow if we threw away all values that were outside of the truncation line, and re-drew from the distribution. Following from that definition of a truncated distribution, it is known the distribution can be written as:
-%
-\begin{align*}
-p(y | y > 0) &= \frac{p(y)}{1 - p(y \leq 0)} \\
-p(y | y \leq 0) &= \frac{p(y)}{p(y \leq 0)}
-\end{align*}
-%
-The intuition behind this is that we want to scale the bounded distribution UP by the amount of the unbounded distribution found outside of the boundary, which equates to dividing by the percent of the unbounded distribution found within the boundary. We will define a function, $g(x)$ to be the CDF any random variable x evaluated at 0:
-
-$$
-g(x) = \Phi_x(0) = p(x \leq 0)
-$$
-
-This becomes convenient to rewrite to include both possible values of $t$ and here we have our density of $z_n | \bm{w}, \bm{x}_n, t_n$:
-%
-\begin{align}
-p(z_n | \bm{w}, \bm{x}_n, t_n) &= \frac{p(z_n | \bm{w}, \bm{x}_n)}{g(z_n | \bm{w}, \bm{x}_n)(g(z_n| \bm{w}, \bm{x}_n)^{-1} - g(z_n | \bm{w}, \bm{x}_n))^{t_n}}
-\end{align}
-%
-Now we define $g(z_n | \bm{w}, \bm{x}_n)$ and $p(z_n | \bm{w}, \bm{x}_n)$ for both guassian and logistic densities, which will allow us to use (1) to solve for $z_n | \bm{w}, \bm{x}_n, t_n$ for probit and logit models, respectively:
-
-
-\subsubsection*{ALTERNATE}
 %
 We will consider a general case of K discrete possible values for $t$, which will easily hold true for our binomial case, and will be shown to be a more general expression of the truncated distribution in the currently-considered binomial case. We can marginalize over $t$:
 %
@@ -207,8 +157,76 @@ We will show that $p(t_n | \bm{w}, \bm{x}_n)$ is equal to the probability given 
 
 See probelm 2?
 
+
+\subsubsection*{Factor Model}
+
+Applying bayes theorum:
+%
+\begin{align*}
+p( \bm{z}_n | \bm{x}_n, \bm{w}, \bm{\Sigma} ) &= \frac{p(\bm{x}_n | \bm{z}_n, \bm{w}, \bm{\Sigma}) p(\bm{z}_n, \bm{w}, \bm{\Sigma})} {p(\bm{x}_n, \bm{w}, \bm{\Sigma})}
+\end{align*}
+%
+
 \section*{Slides 8}
 
-\subsection*{}
+\subsection*{Problem 1}
+
+We begin with bayes theorum, and rearrange taking advantage of indepence of parameters and expressing the marginal distribution denominator as the joint distribution of our observed variable with our latent variable, integrated over our latent variable:
+%
+\begin{align*}
+p(\eta_n | \bm{t}_n, \bm{X}_n, \bm{w}, q) &= \frac{ p(\bm{t}_n | \eta_n, X_n, \bm{w}, q) p(\eta_n, \bm{X}_n, \bm{w}, q)  }{ p(\bm{t}_n, \bm{X}_n, \bm{w}, q )} \\
+p(\eta_n | \bm{t}_n, \bm{X}_n, \bm{w}, q) &= \frac{ p(\bm{t}_n | \eta_n, X_n, \bm{w}, q) p(\eta_n)  }{ \int p(\bm{t}_n, | \eta_n, \bm{X}_n, \bm{w}, q )p(\eta_n) d\eta }
+\end{align*}
+%
+We will focus first on simplifying our numerator, $p(\bm{t}_n | \eta_n, X_n, \bm{w}, q) p(\eta_n)$. We plug in the given distributions for $\bm{t}_n$ and $/eta_n$ and combine terms:
+$$
+normal * gamma blah blah
+$$
+%
+$$
+\frac{ (\frac{\nu}{2} - 1)^{\frac{\nu}{2}} \eta^{\frac{\nu}{2} - 1} }{ \Gamma(\frac{\nu}{2}) }
+\exp \Bigg\{  -\eta(\frac{\nu}{2} - 1)   \Bigg\}
+\frac{1}{| 2\pi(\eta q)^{-1} \bm{I} |^{ \frac{1}{2}}}
+\exp \Bigg\{  -\frac{\eta q}{2} (\phi(\bm{X}_n)^{T}\bm{w})^T(\phi(\bm{X}_n)^T\bm{w})   \Bigg\}
+$$
+$$
+\frac{ (\frac{\nu}{2} - 1)^{\frac{\nu}{2}} \eta^{\frac{\nu}{2} - 1} }{ \Gamma(\frac{\nu}{2}) (2\pi)^{ \frac{1}{2}} \eta^{- \frac{1}{2}} q^{- \frac{1}{2} } }
+\exp \Bigg\{ -\eta(\frac{\nu}{2} - 1 + \frac{q}{2} (\phi(\bm{X}_n)^{T}\bm{w})^T(\phi(\bm{X}_n)^T\bm{w}))   \Bigg\}
+$$
+$$
+\frac{ q^{ \frac{1}{2}} (\frac{\nu}{2} - 1)^{\frac{\nu}{2}} \eta^{\frac{\nu + 1}{2} - 1} } { \Gamma(\frac{\nu}{2}) (2\pi)^{ \frac{1}{2}} }
+\exp \Bigg\{ -\eta(\nu + q (\phi(\bm{X}_n)^{T}\bm{w})^T(\phi(\bm{X}_n)^T\bm{w})/2 - 1)   \Bigg\}
+$$
+%
+At this point we see that we have found our $\beta$ in the exponent term, and in our $\eta$ term, which is great. We also see that we have a $sqrt{\pi}$, which we know is equal to $\Gamma(\frac{1}{2})$. Safe to say, that attempting to perform the integration at this point would be a waste of my youth. I will go ahead and skip to the following:
+%
+$$
+C * \eta^{\frac{\nu + 1}{2} - 1} *
+\exp \Bigg\{ -\eta(\nu + q (\phi(\bm{X}_n)^{T}\bm{w})^T(\phi(\bm{X}_n)^T\bm{w})/2 - 1)   \Bigg\}
+$$
+
+\subsection*{Problem 2}
+
+We start from the following definition:
+
+\begin{align*}
+\int \log p(\bm{t}, \bm{\eta | \theta}) p(\bm{\eta} | \bm{t}, \theta')d\bm{\eta} + C
+\end{align*}
+
+With C referring to everything that does not depend on $\theta$. Quite luckily, we have already derived the joint distribution of $t_n$ and $\eta$, and we can substitute everything there that does not depend on $\theta$, which is the exponent term, which of course cancels the log:
+
+
+$$
+\int -\eta(\nu + q (\phi(\bm{X}_n)^{T}\bm{w})^T(\phi(\bm{X}_n)^T\bm{w})/2 - 1) p(\bm{\eta} | \bm{t}, \theta')d\bm{\eta} + C
+$$
+$$
+\int -(\nu + q (\phi(\bm{X}_n)^{T}\bm{w})^T(\phi(\bm{X}_n)^T\bm{w})/2 - 1) \bm{\eta} p(\bm{\eta} | \bm{t}, \theta')d\bm{\eta} + C
+$$
+$$
+\int -(\nu + q (\phi(\bm{X}_n)^{T}\bm{w})^T(\phi(\bm{X}_n)^T\bm{w})/2 - 1) \mathbb{E}[\bm{\eta} | \bm{t}, \bm{X}, \theta'] + C
+$$
+
+
+
 
 \end{document}

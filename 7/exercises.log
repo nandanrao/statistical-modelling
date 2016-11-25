@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  15 NOV 2016 20:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  24 NOV 2016 20:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -564,7 +564,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 103.
+(Font)              scaled to size 12.0pt on input line 104.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -580,6 +580,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
+Overfull \hbox (37.95032pt too wide) detected at line 191
+[] [] [] \OMS/cmbrs/m/n/12 ^^@ \OML/cmbrm/m/it/12 ^^Q\OT1/cmbr/m/n/12 ([] \OMS/
+cmbrs/m/n/12 ^^@ \OT1/cmbr/m/n/12 1)[][] [] [] \OMS/cmbrs/m/n/12 ^^@ []\OT1/cmb
+r/m/n/12 (\OML/cmbrm/m/it/12 ^^^\OT1/cmbr/m/n/12 (\OML/cmm/b/it/12 X[]\OT1/cmbr
+/m/n/12 )[]\OML/cmm/b/it/12 w\OT1/cmbr/m/n/12 )[](\OML/cmbrm/m/it/12 ^^^\OT1/cm
+br/m/n/12 (\OML/cmm/b/it/12 X[]\OT1/cmbr/m/n/12 )[]\OML/cmm/b/it/12 w\OT1/cmbr/
+m/n/12 )[]
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.0pt.
@@ -597,27 +606,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  4677 strings out of 493089
  67418 string characters out of 6134842
- 129598 words of memory out of 5000000
+ 130598 words of memory out of 5000000
  8050 multiletter control sequences out of 15000+600000
  19030 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,13n,43p,482b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,13n,43p,510b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/robo
 to/rbto_oa6oe5.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/google/robot
 o/Roboto-Bold.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/google/roboto
 /Roboto-Light.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmib10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbrigh
-t/hfbr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hf
-br8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrbs1
-0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi8.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrsy8.pfb>
-Output written on exercises.pdf (6 pages, 129955 bytes).
+ts/cm/cmbsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmib10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright
+/hfbr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfb
+r8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrbs10
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrmi8.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/hfbright/hfbrsy8.pfb>
+Output written on exercises.pdf (6 pages, 150035 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

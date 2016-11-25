@@ -18,6 +18,9 @@
     "multicol"
     "fancyhdr"
     "sansmath"
-    "roboto"))
+    "roboto")
+   (LaTeX-add-environments
+    '("proof" LaTeX-env-args ["argument"] 0)
+    '("prop" LaTeX-env-args ["argument"] 0)))
  :latex)
 

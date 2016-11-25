@@ -13,25 +13,29 @@ load("synth_reg.rda")
 # --------------------- MCMC
 model_robust <- stan("model_robust.stan", data=synth_reg)
 
-loglik.robust <- function (params, X, t) {
-    N <- dim(X)[1]
+loglik.robust <- function (params, X, t, nu = 10) {
+    q = 1
+    N <- nrow(X)
+    M <- ncol(X)
     W <- head(params, -N)
-    Z <- tail(params, N)
+    Eta <- tail(params, N)
 
-    mean <- cbind(rep(1, N), X) %*% W
-    s = rep(0, N)
+    mean <- X %*% W
+
     s <- 0
     for (i in 1:N) {
-        likelihood <- dnorm(t[i], mean[i], Z[i], log = TRUE)
-        latent <- dnorm(Z[i], 0, .5^2, log = TRUE)
+        sd <- sqrt(1/(Eta[i]))
+        likelihood <- dnorm(t[i], mean[i], sd, log = TRUE)
+        latent <- dgamma(Eta[i], nu/2, nu/2 - 1, log = TRUE)
         s <- s + likelihood + latent
     }
     -s
 }
 
 # --------------------- Conjugate Gradient Descent
-params <- c(rep(0, 1 + synth_reg$M), rep(1,synth_reg$N))
-o.robust <- optim(params, fn = loglik.robust, method=c("CG"), X = synth_reg$Phy, t = synth_reg$t)
+params <- c(rep(0, synth_reg$M + 1), rep(1,synth_reg$N))
+X <- cbind(rep(1, nrow(synth_reg$Phy)), synth_reg$Phy)
+o.robust <- optim(params, fn = loglik.robust, method=c("CG"), X = X, t = synth_reg$t, nu = 10)
 weights.mle.robust <- o.robust$par[1:31]
 weights.mle.robust
 
