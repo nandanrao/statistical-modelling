@@ -12,7 +12,6 @@ load("synth_reg.rda")
 
 # --------------------- MCMC
 model_robust <- stan("model_robust.stan", data=synth_reg)
-
 loglik.robust <- function (params, X, t, nu = 10) {
     q = 1
     N <- nrow(X)

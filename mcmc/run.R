@@ -18,6 +18,7 @@ plot(model_basic, pars="sig_e")
 ## fit ridge model
 
 model_ridge <- stan("model_ridge.stan", data=synth_reg)
+
 plot(model_ridge, pars="w")
 plot(model_ridge, pars="sig_e")
 plot(model_ridge, pars="lam")

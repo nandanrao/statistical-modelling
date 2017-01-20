@@ -161,26 +161,52 @@ my.split <- function (y, n) {
 }
 
 
-cross.validation <- function (y, X, lam, pen.reg) {
+cross.validation <- function (y, X, em, nus) {
 
     # hardcode number of folds
     n <- 5
     sets.y <- my.split(y, n)
     sets.X <- my.split(X, n)
-    RSS <- 0
+    RSS <- c()
 
-    for (i in 1:n) {
-        test.y <- sets.y[[i]]
-        test.X <- sets.X[[i]]
+    for (nu in nus) {
+        temp <- 0
+        for (i in 1:n) {
+            test.y <- sets.y[[i]]
+            test.X <- sets.X[[i]]
 
-        # ugliness for removing list
-        train.y <- unlist(sets.y[setdiff(1:n, i)])
-        train.X <- do.call(rbind, sets.X[setdiff(1:n, i)])
+                                        # ugliness for removing list
+            train.y <- unlist(sets.y[setdiff(1:n, i)])
+            train.X <- do.call(rbind, sets.X[setdiff(1:n, i)])
 
-        beta <- pen.reg(train.y, train.X, lam)
+            beta <- em(train.y, train.X, iter=20, nu = nu)$w
 
-        # We want the average of the RSS for all, so sum their fraction
-        RSS <- RSS + sum((test.y - test.X %*% beta)**2)/n
+                                        # We want the average of the RSS for all, so sum their fraction
+            temp <- temp + sum((test.y - test.X %*% beta)**2)/n
+        }
+        RSS <- c(RSS, temp)
     }
+
     RSS
 }
+
+cv <- cross.validation(synth_reg$t, X, em, 3:30)
+
+
+###############################
+# STAN
+###############################
+
+library(rstan)
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+model_robust <- stan("model_robust.stan", data=synth_reg)
+
+
+
+################################
+# MIX
+################################
+
+X.nas <- data.frame(z = NA, X)
+X.mix <- prelim.mix(X.nas, 0)

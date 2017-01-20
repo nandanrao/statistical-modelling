@@ -314,10 +314,11 @@ likelihood <- function (T, X, Z, q, w, nu = 10, sum = TRUE, latent = TRUE) {
 
     for (i in 1:N) {
         sd <- sqrt(1/(q*Z[i]))
-        likelihood <- dnorm(T[i], t(X[i,]) %*% w, sd, log=TRUE)
+        likelihood <- dt((T[i] - t(X[i,]) %*% w)/sd)
         lat <- 0
         if (latent) {
-            lat <- dgamma(Z[i], nu/2, nu/2 - 1, log=TRUE)
+            ## lat <- dgamma(Z[i], nu/2, nu/2 - 1, log=TRUE)
+            lat <- 0
         }
         s <- c(s, likelihood + lat)
     }
